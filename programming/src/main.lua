@@ -1,23 +1,23 @@
 local drawqueue, stepqueue
 
 function love.load()
-	print "Hello World :)"
+	print "Entering love.load()"
+	
 	drawqueue = require"eventqueue".new("draw")
 	stepqueue = require"eventqueue".new("update")
-end
-
-function love.quit()
 	
-end
-
-function love.draw()
-	drawqueue:runall()
+	print "Leaving love.load()"
 end
 
 function love.update(dt)
 	stepqueue:runall(dt)
 end
 
-function love.keypressed(key, scancode, isrepeat)
+-- No game logic here please!
+function love.draw()
+	drawqueue:runall()
+end
+
+function love.quit()
 	
 end

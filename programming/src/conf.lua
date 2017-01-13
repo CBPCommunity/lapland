@@ -1,4 +1,6 @@
 debug = true;
+-- Please check this whenever writing debugging-related code to make sure
+-- no unwanted output makes it into a release version!
 
 function love.conf(game)
     game.identity = "Lapland";
@@ -8,3 +10,6 @@ function love.conf(game)
     game.window.borderless = not debug;
     game.console = debug;
 end
+
+-- For more information about possible settings please
+-- see the [love wiki page](http://love2d.org/wiki/Config_Files)
